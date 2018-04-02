@@ -10,10 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180402170028) do
+ActiveRecord::Schema.define(version: 20180402171401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "costume_id"
+    t.date "start_on"
+    t.date "end_on"
+    t.string "status", default: "pending"
+    t.integer "price"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["costume_id"], name: "index_bookings_on_costume_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "costumes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "name"
+    t.integer "price"
+    t.text "description"
+    t.string "size"
+    t.string "category"
+    t.string "image"
+    t.string "city"
+    t.boolean "availability", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_costumes_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +61,7 @@ ActiveRecord::Schema.define(version: 20180402170028) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "costumes"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "costumes", "users"
 end
