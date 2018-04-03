@@ -1,0 +1,27 @@
+ <!-- form ici !! -->
+<%= simple_form(costume) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.input :size %>
+  <%= f.input :category %>
+  <%= f.input :image  %>
+  <%= f.input :city %>
+  <%= f.input :availability  %>
+  <%= f.submit 'Add a costume', class: "btn btn-primary" %>
+<% end %>
+
+<!-- create_table "costumes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "name"
+    t.integer "price"
+    t.text "description"
+    t.string "size"
+    t.string "category"
+    t.string "image"
+    t.string "city"
+    t.boolean "availability", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_costumes_on_user_id"
+ -->
