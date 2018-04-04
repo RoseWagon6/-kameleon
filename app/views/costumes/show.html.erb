@@ -1,24 +1,42 @@
 <!-- the show must go on ! -->
-<h1>Costumes Details : </h1>
-<p>See the costume you just selected !</p>
+<div class="container">
+  <h1>Costumes Details : </h1>
+  <p>See the costume you just selected !</p>
 
 
-<%= costume.name %>
-<%= costume.price %>
-<%= costume.description %>
-<%= costume.size %>
-<%= costume.category %>
-<%= costume.image %>
-<%= costume.city %>
-<%= costume.availability %>
+    <div class="col-md-6">
+      <%= cl_image_tag @costume.image, width: 400, height: 300, crop: :fill %>
+
+    </div>
+    <div class="col-md-4">
+
+      <p>Name : <%= @costume.name %></p>
+      <p><%= @costume.price %> Euros</p>
+      <br>
+      <p>Description : </p>
+      <p><%= @costume.description %></p>
+      <br>
+      <p>Size :<%= @costume.size %></p>
+      <p>Category :<%= @costume.category %></p>
+      <br>
+      <p>City : <%= @costume.city %></p>
+      <p> Available :
+        <% if @costume.availability == true %>
+              <%= "Yes" %>
+            <% else %>
+              <%= "No" %>
+            <% end %>
+
+      </p>
+    </div>
 
 
-
-<!-- buttons : -->
-<!-- rent -->
-<%= link_to 'Add a costume', class: "btn btn-primary" %>
-
-<!-- create -->
-<%= link_to 'Add a costume', owner_costume_path(@costume), class: "btn btn-primary" %>
+  <!-- buttons : -->
+  <!-- rent -->
+  <%= link_to 'Rent', owner_costume_path(@costume), class: "btn btn-primary" %>
 
 
+  <!-- create -->
+
+
+</div>
