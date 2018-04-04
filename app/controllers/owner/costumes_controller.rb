@@ -24,7 +24,7 @@ class Owner::CostumesController < ApplicationController
       :size,
       :category,
       :image,
-      :city,
+      :city
     )
   end
 end
