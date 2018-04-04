@@ -15,7 +15,11 @@
             <h2><%= costume.name %></h2>
           </div>
           <div class="card-availability">
-            <%= costume.availability %>
+            <% if costume.availability == true %>
+              <%= "available" %>
+            <% else %>
+              <%= "unavailable" %>
+            <% end %>
           </div>
           <%= link_to "", costume_path(costume), class: "card-link" %>
         </div>
