@@ -5,11 +5,14 @@
 
 
     <div class="col-md-6">
-      <%= cl_image_tag @costume.image, width: 500, height: 400, crop: :fill %>
-
+      <% if @costume.image.url.nil? %>
+        <%= image_tag("Kameleon-Logo.png") %>
+      <% else %>
+        <%= cl_image_tag @costume.image, width: 500, height: 400, crop: :fill %>
+      <% end %>
     </div>
-    <div class="col-md-4">
 
+    <div class="col-md-4">
       <p>Name : <%= @costume.name %></p>
       <p><%= @costume.price %> Euros</p>
       <br>
@@ -22,11 +25,10 @@
       <p>City : <%= @costume.city %></p>
       <p> Available :
         <% if @costume.availability == true %>
-              <%= "Yes" %>
-            <% else %>
-              <%= "No" %>
-            <% end %>
-
+            <%= "Yes" %>
+          <% else %>
+            <%= "No" %>
+          <% end %>
       </p>
     </div>
 
