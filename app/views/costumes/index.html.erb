@@ -1,0 +1,25 @@
+
+<div class="container">
+  <h1>Here is the list of all our costumes</h1>
+
+  <div class="row">
+    <% @costumes.each do |costume| %>
+      <div class="col-xs-8 col-sm-6 col-md-3">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path costume.image, height: 70, gravity: :south; %>');">
+          <div class="card-category">
+            <%= costume.category %></div>
+          <div class="card-price">
+            <span><%= costume.price %> € </span>
+          </div>
+          <div class="card-name">
+            <h2><%= costume.name %></h2>
+          </div>
+          <div class="card-availability">
+            <%= costume.availability %>
+          </div>
+          <%= link_to "", costume_path(costume), class: "card-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
