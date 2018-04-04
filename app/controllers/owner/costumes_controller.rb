@@ -6,9 +6,12 @@ class Owner::CostumesController < ApplicationController
 
   def create
     @costume = Costume.new(costume_params)
-    @costume.save
-
-    redirect_to costume_path(@costume)
+   
+    if @costume.save
+      redirect_to costume_path(@costume)
+    else
+      render :new
+    end
   end
 
   private
@@ -22,7 +25,6 @@ class Owner::CostumesController < ApplicationController
       :category,
       :image,
       :city,
-      :availability
     )
   end
 end
