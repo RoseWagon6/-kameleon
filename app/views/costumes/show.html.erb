@@ -2,3 +2,23 @@
 <h1>Costumes Details : </h1>
 <p>See the costume you just selected !</p>
 
+
+<%= costume.name %>
+<%= costume.price %>
+<%= costume.description %>
+<%= costume.size %>
+<%= costume.category %>
+<%= costume.image %>
+<%= costume.city %>
+<%= costume.availability %>
+
+
+
+<!-- buttons : -->
+<!-- rent -->
+<%= link_to 'Add a costume', class: "btn btn-primary" %>
+
+<!-- create -->
+<%= link_to 'Add a costume', owner_costume_path(@costume), class: "btn btn-primary" %>
+
+
