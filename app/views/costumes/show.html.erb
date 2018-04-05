@@ -30,15 +30,21 @@
             <%= "No" %>
           <% end %>
       </p>
+
+      <div class="col-md-3">
+        <%= simple_form_for [@costume, @booking] do |f| %>
+          <%= f.input :start_on %>
+          <%= f.input :end_on %>
+          <%= f.input :message %>
+          <%= f.submit "Add", class: "btn btn-primary btn-block" %>
+        <% end %>
+      </div>
     </div>
 
 
   <!-- buttons : -->
   <div class="btn-show-details col-md-3">
     <div class="span2">
-    <!-- rent -->
-    <%= link_to 'Rent', bookings_path, class: "btn btn-primary btn-block" %>
-    <!-- List Alls -->
     <%= link_to 'See all costumes', costumes_path, class: "btn btn-success btn-block"  %>
     <!-- TO DO back to create -->
     <!-- update -->

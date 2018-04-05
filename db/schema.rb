@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180403103330) do
+ActiveRecord::Schema.define(version: 20180405135849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20180403103330) do
     t.date "start_on"
     t.date "end_on"
     t.string "status", default: "pending"
-    t.integer "price"
+    t.integer "total_price"
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
