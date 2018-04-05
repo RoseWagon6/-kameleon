@@ -9,7 +9,7 @@ class Owner::CostumesController < ApplicationController
     @costume.user = current_user
 
     if @costume.save
-      redirect_to costume_path(@costume)
+      redirect_to owner_costumes_path
     else
       render :new
     end
