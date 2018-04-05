@@ -18,8 +18,10 @@
       <div class="element contact">
         <% if booking.status == "pending" %>
            <div class="span">
-            <%= link_to 'validate', costumes_path, class: "btn btn-success btn-block"  %>
-            <%= link_to 'refuse', costumes_path, class: "btn btn-danger btn-block"  %>
+
+           <%= link_to 'validate', accept_owner_booking_path(booking), method: :patch, class: "btn btn-success btn-block" %>
+           <%= link_to 'refuse', refuse_owner_booking_path(booking), method: :patch, class: "btn btn-danger btn-block"  %>
+
           </div>
         <% else %>
             <p><%= "" %></p>
@@ -28,3 +30,6 @@
     </div>
   <% end %>
 </div>
+
+
+
