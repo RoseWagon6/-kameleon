@@ -1,5 +1,14 @@
 class Owner::CostumesController < ApplicationController
 
+  def index
+    @costumes = current_user.costumes
+  end
+
+  # def show
+  #   @costume = Costume.find(params[:id])
+  #   @costume.user = current_user
+  # end
+
   def new
     @costume = Costume.new
   end
@@ -9,7 +18,7 @@ class Owner::CostumesController < ApplicationController
     @costume.user = current_user
 
     if @costume.save
-      redirect_to costume_path(@costume)
+      redirect_to owner_costumes_path(@costume)
     else
       render :new
     end
