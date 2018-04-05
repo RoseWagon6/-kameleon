@@ -13,10 +13,13 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
-    <%= yield %>
+    <!-- <div class="wrapper-index-background"> -->
+      <%= yield %>
+    <!-- </div> -->
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <%= render 'shared/footer' %>
 
   </body>
 </html>
