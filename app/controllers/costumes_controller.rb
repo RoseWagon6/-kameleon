@@ -9,4 +9,6 @@ class CostumesController < ApplicationController
     @costume = Costume.find(params[:id])
     @booking = Booking.new # On crée un objet vide pour simple_form
   end
+
+
 end

@@ -1,7 +1,7 @@
 class Owner::BookingsController < ApplicationController
 
   def index
-    @bookings = current_user.bookings
+    @bookings = current_user.received_bookings
   end
 
   def show

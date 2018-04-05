@@ -17,9 +17,15 @@
       </div>
       <div class="element contact">
         <% if booking.status == "accepted" %>
-          <p><%= booking.user.phone %></p>
+
+
+        <% elsif booking.status == "pending" %>
+           <div class="span">
+-           <%= link_to 'validate', costumes_path, class: "btn btn-success btn-block"  %>
+            <%= link_to 'refuse', costumes_path, class: "btn btn-danger btn-block"  %>
+          </div>
         <% else %>
-          <p><%= "..no contact yet.." %></p>
+            <p><%= "" %></p>
         <% end %>
       </div>
     </div>
