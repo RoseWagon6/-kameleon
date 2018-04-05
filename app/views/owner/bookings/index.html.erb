@@ -1,0 +1,30 @@
+<div class="container">
+
+  <h1>Actual rental booking (dashowner) </h1>
+
+  <% @bookings.each do |booking| %>
+    <div class="flat_card">
+      <div class="element image">
+        <%= cl_image_tag(booking.costume.image, width: 85, height: 100) %>
+      </div>
+      <div class="element content">
+        <p><%= booking.costume.name %></p>
+        <p><%= booking.costume.price %></p>
+      </div>
+      <div class="element status">
+        <p id="<%=booking.status %>"><%= booking.status %></p>
+        <p><%= booking.start_on %> - <%= booking.end_on %></p>
+      </div>
+      <div class="element contact">
+        <% if booking.status == "pending" %>
+           <div class="span">
+            <%= link_to 'validate', costumes_path, class: "btn btn-success btn-block"  %>
+            <%= link_to 'refuse', costumes_path, class: "btn btn-danger btn-block"  %>
+          </div>
+        <% else %>
+            <p><%= "" %></p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

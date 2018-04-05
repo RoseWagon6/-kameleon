@@ -9,6 +9,7 @@
       <% else %>
         <%= cl_image_tag @costume.image, width: 500, height: 400, crop: :fill %>
       <% end %>
+      <p>Costume owner : <%= @costume.user.first_name %></p>
     </div>
 
     <div class="col-md-3">
@@ -36,12 +37,13 @@
         <%= f.input :start_on %>
         <%= f.input :end_on %>
         <%= f.input :message %>
-        <%= f.submit "Add", class: "btn btn-primary btn-block" %>
+        <%= f.submit "Rent", class: "btn btn-primary btn-block" %>
       <% end %>
 
-      <div class="btn-show-details col-md-3">
+      <div class="btn-show-details">
         <div class="span2">
-          <%= link_to 'Rent', bookings_path, class: "btn btn-primary btn-block" %>
+           <!-- List Alls -->
+-         <%= link_to 'See all costumes', costumes_path, class: "btn btn-success btn-block"  %>
         </div>
       </div>
     </div>
