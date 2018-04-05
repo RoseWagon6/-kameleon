@@ -1,0 +1,43 @@
+.flat_card {
+  background: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  margin: 1em;
+}
+
+.flat_card .element {
+    margin: 0 1em;
+}
+
+.flat_card .image {
+  align-items: center;
+  width: 100px;
+}
+
+.flat_card .content {
+  flex-grow: 1;
+  width: 250px;
+}
+
+.flat_card .status {
+  flex-grow : 1;
+  width: 100px;
+}
+
+.flat_card .contact {
+  color: green;
+  width: 150px;
+}
+
+.flat_card #accepted {
+  color: green;
+}
+
+.flat_card #refused {
+  color: red;
+}
+
+.flat_card #pending {
+  color: blue;
+}

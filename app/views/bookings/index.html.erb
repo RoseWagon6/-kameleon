@@ -1,0 +1,27 @@
+<div class="container">
+
+  <h1>List of all your bookings</h1>
+
+  <% @bookings.each do |booking| %>
+    <div class="flat_card">
+      <div class="element image">
+        <%= cl_image_tag(booking.costume.image, width: 85, height: 100) %>
+      </div>
+      <div class="element content">
+        <p><%= booking.costume.name %></p>
+        <p><%= booking.costume.price %></p>
+      </div>
+      <div class="element status">
+        <p id="<%=booking.status %>"><%= booking.status %></p>
+        <p><%= booking.start_on %> - <%= booking.end_on %></p>
+      </div>
+      <div class="element contact">
+        <% if booking.status == "accepted" %>
+          <p><%= booking.user.phone %></p>
+        <% else %>
+          <p><%= "..no contact yet.." %></p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

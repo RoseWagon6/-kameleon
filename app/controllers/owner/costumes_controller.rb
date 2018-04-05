@@ -1,5 +1,14 @@
 class Owner::CostumesController < ApplicationController
 
+  def index
+    @costumes = current_user.costumes
+  end
+
+  # def show
+  #   @costume = Costume.find(params[:id])
+  #   @costume.user = current_user
+  # end
+
   def new
     @costume = Costume.new
   end
