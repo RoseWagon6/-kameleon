@@ -3,7 +3,6 @@
   <h1>Costumes Details : </h1>
   <p>See the costume you just selected !</p>
 
-
     <div class="col-md-6">
       <% if @costume.image.url.nil? %>
         <%= image_tag("Kameleon-Logo.png") %>
@@ -30,24 +29,20 @@
             <%= "No" %>
           <% end %>
       </p>
+    </div>
 
-      <div class="col-md-3">
-        <%= simple_form_for [@costume, @booking] do |f| %>
-          <%= f.input :start_on %>
-          <%= f.input :end_on %>
-          <%= f.input :message %>
-          <%= f.submit "Add", class: "btn btn-primary btn-block" %>
-        <% end %>
+    <div class="col-md-3">
+      <%= simple_form_for [@costume, @booking] do |f| %>
+        <%= f.input :start_on %>
+        <%= f.input :end_on %>
+        <%= f.input :message %>
+        <%= f.submit "Add", class: "btn btn-primary btn-block" %>
+      <% end %>
+
+      <div class="btn-show-details col-md-3">
+        <div class="span2">
+          <%= link_to 'Rent', bookings_path, class: "btn btn-primary btn-block" %>
+        </div>
       </div>
     </div>
-
-
-  <!-- buttons : -->
-  <div class="btn-show-details col-md-3">
-    <div class="span2">
-    <%= link_to 'See all costumes', costumes_path, class: "btn btn-success btn-block"  %>
-    <!-- TO DO back to create -->
-    <!-- update -->
-    </div>
-  </div>
 </div>
