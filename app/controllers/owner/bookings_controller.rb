@@ -4,14 +4,10 @@ class Owner::BookingsController < ApplicationController
     @bookings = current_user.received_bookings
   end
 
-  def show
-
+  def accept
   end
 
-  def accept_owner_booking
-  end
-
-  def refuse_owner_booking
+  def refuse
   end
 
 end
