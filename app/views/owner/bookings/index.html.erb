@@ -16,12 +16,9 @@
         <p><%= booking.start_on %> - <%= booking.end_on %></p>
       </div>
       <div class="element contact">
-        <% if booking.status == "accepted" %>
-
-
-        <% elsif booking.status == "pending" %>
+        <% if booking.status == "pending" %>
            <div class="span">
--           <%= link_to 'validate', costumes_path, class: "btn btn-success btn-block"  %>
+            <%= link_to 'validate', costumes_path, class: "btn btn-success btn-block"  %>
             <%= link_to 'refuse', costumes_path, class: "btn btn-danger btn-block"  %>
           </div>
         <% else %>
