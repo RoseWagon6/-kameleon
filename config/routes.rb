@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # par défaut nous sommes dans le cas du renter :
   resources :costumes, only: [:index, :show] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: :create
   end
 
   resources :bookings, only: [:index, :show]
