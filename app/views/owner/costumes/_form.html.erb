@@ -5,17 +5,14 @@
       <%= f.input :name %>
       <%= f.input :price, label:"Price (Euros)"%>
       <%= f.input :size %>
-      <%= f.input :category %>
+      <%= f.input :category, :collection => { "Animals" => "Animals", "Celebrities" => "Celebrities", "Public Events" => "Public Events", "Roles & Personages" => "Roles & Personages" }, :include_blank => 'Select a category', :multiple => true  %>
       <%= f.input :city %>
     </div>
     <div class="col-md-6">
       <%= f.input :image  %> <br><br><br>
       <%= f.input :description %>
 
-
-
-      <%= f.submit 'Add a costume', class: "btn btn-primary" %>
+    <%= f.submit 'Add a costume', class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
-

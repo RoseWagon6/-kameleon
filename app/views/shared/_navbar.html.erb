@@ -58,14 +58,13 @@
           <li><%= link_to "My bookings", bookings_path %></li>
           <li><%= link_to "My Profile", profile_path %></li>
           <li><%= link_to "Settings", "#" %></li>
-          <li><%= link_to "Log out", destroy_user_session_path %></li>
+          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         </ul>
       </div>
 
     <% else %>
 
       <%= link_to t(".sign_in", default: "Log in"), new_user_session_path, class: "navbar-wagon-item-mobile navbar-wagon-link" %>
-
     <% end %>
   </div>
 </div>
