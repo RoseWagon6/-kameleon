@@ -1,13 +1,15 @@
 .footer {
-  background-image: linear-gradient(-225deg, rgba(0,0,0,0.01) 20%, rgba(0,0,0,0.01) 20%),
-  url(Deep_Space.jpg);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 65px;
+  width: 100%;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
+  position: fixed;
+  bottom: 0;
 }
+
 .footer-links {
   display: flex;
   align-items: center;
@@ -21,7 +23,7 @@
   padding: 0px 10px;
 }
 .footer-links a:hover {
-  color: black;
+  color: orange;
   opacity: 1;
 }
 .footer .fa-heart {
@@ -29,4 +31,5 @@
 }
 .footer-copyright {
   color: white;
+  font-size: 16px;
 }
