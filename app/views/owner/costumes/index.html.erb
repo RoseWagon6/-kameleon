@@ -11,24 +11,25 @@
         <% if costume.image.url.nil? %>
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "Kameleon-Logo.png", width: 200, height: 200, crop: :fill %>');">
         <% else %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)), url('<%= cl_image_path costume.image, width: 500, height: 400, crop: :scale %>');">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)), url('<%= cl_image_path costume.image, width: 200, height: 200, crop: :fill %>');">
         <% end %>
 
           <div class="card-category">
-            <%= costume.category %></div>
+            <%= costume.category %>
+          </div>
+
           <div class="card-price col-xs-offset-3">
             <span><%= costume.price %> € </span>
           </div>
+
           <div class="card-name">
             <h2><%= costume.name %></h2>
           </div>
-          <div class="card-availability">
-            <% if costume.availability == true %>
-              <%= "available" %>
-            <% else %>
-              <%= "unavailable" %>
-            <% end %>
+
+          <div class="card-city">
+            <%= costume.city %>
           </div>
+
           <%= link_to "", costume_path(costume), class: "card-link" %>
         </div>
       </div>
