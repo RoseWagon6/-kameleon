@@ -5,14 +5,15 @@
     <div class="index-title text-center">
       <h1>Here is the list of all our costumes</h1>
     </div>
-    <div class="list-costumes">
+
+    <div class="background-white">
       <div class="row">
         <% @costumes.each do |costume| %>
           <div class="col-xs-8 col-sm-6 col-md-3">
             <% if costume.image.url.nil? %>
               <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "Kameleon-Logo.png", width: 200, height: 200, crop: :fill %>');">
             <% else %>
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)), url('<%= cl_image_path costume.image, width: 200, height: 200, crop: :fill %>');">
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)), url('<%= cl_image_path costume.image, width: 500, height: 400, crop: :fill %>');">
             <% end %>
               <div class="card-category">
                 <%= costume.category %></div>

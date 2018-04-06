@@ -10,8 +10,8 @@
           <%= cl_image_tag(booking.costume.image, width: 85, height: 100) %>
         </div>
         <div class="element content">
-          <p><%= booking.costume.name %></p>
-          <p><%= booking.costume.price %></p>
+          <p><%= booking.costume.name.capitalize %></p>
+          <p><%= booking.costume.price %><span> €/day</span></p>
         </div>
         <div class="element status">
           <p id="<%=booking.status %>"><%= booking.status %></p>

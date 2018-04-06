@@ -3,11 +3,12 @@
   <h1>Costumes Details : </h1>
   <p>See the costume you just selected !</p>
 
-    <div class="col-md-6">
+  <div class="background-white">
+    <div class="col-md-5">
       <% if @costume.image.url.nil? %>
         <%= image_tag("Kameleon-Logo.png") %>
       <% else %>
-        <%= cl_image_tag @costume.image, width: 500, height: 400, crop: :fill %>
+        <%= cl_image_tag @costume.image, width: 400, height: 450, crop: :fill %>
       <% end %>
       <p>Costume owner : <%= @costume.user.first_name %></p>
     </div>
@@ -32,19 +33,21 @@
       </p>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-4">
       <%= simple_form_for [@costume, @booking] do |f| %>
         <%= f.input :start_on %>
         <%= f.input :end_on %>
         <%= f.input :message %>
         <%= f.submit "Rent", class: "btn btn-primary btn-block" %>
+        <br>
       <% end %>
 
       <div class="btn-show-details">
         <div class="span2">
            <!-- List Alls -->
--         <%= link_to 'See all costumes', costumes_path, class: "btn btn-success btn-block"  %>
+          <%= link_to 'See all costumes', costumes_path, class: "btn btn-success btn-block"  %>
         </div>
       </div>
     </div>
+  </div>
 </div>
