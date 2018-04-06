@@ -1,26 +1,28 @@
 <div class="container">
-
-  <h1>Actual rental booking (dashowner) </h1>
+  <div class="index-title text-center">
+    <h1>Current rental booking </h1>
+  </div>
+  <div class="background-white">
 
   <% @bookings.each do |booking| %>
-  
+
     <div class="flat_card">
       <div class="element image">
         <%= cl_image_tag(booking.costume.image, width: 85, height: 100) %>
       </div>
-      
+
       <div class="element content">
         <p><%= booking.costume.name %></p>
         <p><%= booking.costume.price %></p>
       </div>
-      
+
       <div class="element status">
         <p id="<%=booking.status %>"><%= booking.status %></p>
         <p><%= booking.start_on %> - <%= booking.end_on %></p>
       </div>
-      
+
       <div class="element contact">
-        
+
         <% if booking.status == "pending" %>
            <div class="span">
            <%= link_to 'Accept', accept_owner_booking_path(booking), method: :patch, class: "btn btn-success btn-block" %>
@@ -32,6 +34,7 @@
       </div>
     </div>
   <% end %>
+</div>
 </div>
 
 
