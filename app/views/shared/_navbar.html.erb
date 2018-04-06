@@ -4,20 +4,20 @@
     <%= image_tag "Kameleon-Logo.svg", height: 50 %>
   <% end %>
 
+  <%= form_tag costumes_path, class: "search-bar-navbar", method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a costume"
+    %>
+  <% end %>
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= form_tag costumes_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find a costume"
-      %>
-      <% end %>
-
       <%= link_to "Add a costume", new_owner_costume_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "My bookings", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
